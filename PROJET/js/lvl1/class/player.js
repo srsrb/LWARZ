@@ -30,7 +30,6 @@ export class Player{
         players.push(this);// de meme a chaque creation de joueur on le met dans le tableau players au cas on a plusieurs joueurs apres
     }
 
-
     draw(){
         if(this.whichplayer==1){
             drawSprite(perso1, this.width * this.frameX, 0, this.width, this.height, this.x, this.y,this.width,this.height);
@@ -255,6 +254,44 @@ export class Player{
                     PlatformsMesure[1].h = 10;
                 }
             }
+            else{
+                if(                                                                        
+                    this.x + this.width >= LeviersMesure[i].x &&
+                    this.x <= (LeviersMesure[i].x + LeviersMesure[i].w) &&
+                    this.y + this.height >= (LeviersMesure[i].y) &&
+                    this.y + this.height <= (LeviersMesure[i].y + LeviersMesure[i].h)
+                    ){
+                    leviers[i].image = levieract;
+                    if(i==0){
+                        walls[0].image = wall_t;
+                        WallsMesure[0].w = 0;
+                        WallsMesure[0].h = 0;
+                    }
+                    else if(i==1){
+                        platforms[1].image = platform;
+                        PlatformsMesure[1].w = 200;
+                        PlatformsMesure[1].h = 10;
+                    }
+                }
+                else if(
+                    this.x + this.width >= LeviersMesure[i].x &&
+                    this.x <= (LeviersMesure[i].x + LeviersMesure[i].w) &&
+                    this.y + this.height >= (LeviersMesure[i].y + LeviersMesure[i].h) &&
+                    this.y <= (LeviersMesure[i].y + LeviersMesure[i].h)
+                ){
+                    leviers[i].image = levieract;
+                    if(i==0){
+                        walls[0].image = wall_t;
+                        WallsMesure[0].w = 0;
+                        WallsMesure[0].h = 0;
+                    }
+                    else if(i==1){
+                        platforms[1].image = platform;
+                        PlatformsMesure[1].w = 200;
+                        PlatformsMesure[1].h = 10;
+                    }
+                }
+            }
         }
     }
 
@@ -355,6 +392,7 @@ export class Player{
                     this.y + this.height >= (ButtonsMesure[i].y) &&
                     this.y + this.height <= (ButtonsMesure[i].y + ButtonsMesure[i].h)
                     ){
+                        //on a pas de bouttons ici
                 }
             }
         }
