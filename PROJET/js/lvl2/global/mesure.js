@@ -34,8 +34,8 @@ let GroundsMesure = [{
 
 let LeviersMesure = [{
     x: 1000,
-    y: 450,
-    w: 100,
+    y: 500,
+    w: 50,
     h: 50,
 }
 ];
