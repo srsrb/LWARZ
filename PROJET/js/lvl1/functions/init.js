@@ -1,5 +1,5 @@
 import {Fond} from '../class/fond.js';
-import {buttons, platforms,skys,WIDTH,HEIGHT,walls,grounds,ctx,gameOverImg,wall,ground,leviers,platform,doors,wall_t,walls_t} from '../global/glb_var.js';
+import {buttons, platforms,skys,WIDTH,HEIGHT,walls,grounds,ctx,gameOverImg,wall,ground,leviers,platform,doors,wall_t,walls_t,panneau} from '../global/glb_var.js';
 
 import {Button} from '../class/button.js';
 
@@ -12,6 +12,7 @@ import { Door } from '../class/door.js';
 import {PlatformsMesure,WallsMesure,GroundsMesure, ButtonsMesure, LeviersMesure,DoorMesure,WallsInvisibleMesure} from '../global/mesure.js';
 import {Platform} from '../class/platform.js';
 import { Levier } from '../class/levier.js';
+import {Panel} from '../class/panel.js'
 
 let loop = true;
 let gmover = false;
@@ -21,6 +22,10 @@ function initSky(){
     for(let i = 0; i < 4; i++){
         skys.push(new Fond(WIDTH * i));
     }
+}
+
+function initPanel(){
+    new Panel(300,440);
 }
 
 function initLeviers(){
@@ -88,4 +93,4 @@ function drawSprite(img,sX,sY,sW,sH,dX,dY,dW,dH){
     ctx.drawImage(img,sX,sY,sW,sH,dX,dY,dW,dH);
 }
 
-export{initSky,initButton,gameOver,initPlayers,initPlatforms,initWalls,initLeviers,initDoor,p1,p2,drawSprite,loop,gmover,unpause,pause};
+export{initSky,initButton,gameOver,initPlayers,initPlatforms,initWalls,initLeviers,initDoor,initPanel,p1,p2,drawSprite,loop,gmover,unpause,pause};

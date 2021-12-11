@@ -224,10 +224,18 @@ export class Player{
                 this.x + this.width >= (LeviersMesure[i].x) &&
                 this.x + this.width - 5 < (LeviersMesure[i].x)
                 ){
-                leviers[0].image = levieract;
-                walls[0].image = wall_t;
-                WallsMesure[0].w = 0;
-                WallsMesure[0].h = 0;
+    
+                leviers[i].image = levieract;
+                if(i==0){
+                    walls[0].image = wall_t;
+                    WallsMesure[0].w = 0;
+                    WallsMesure[0].h = 0;
+                }
+                else if(i==1){
+                    platforms[1].image = platform;
+                    PlatformsMesure[1].w = 200;
+                    PlatformsMesure[1].h = 10;
+                }
             }
             else if(
                 this.y + this.height - 1 > (LeviersMesure[i].y) &&
@@ -235,10 +243,17 @@ export class Player{
                 this.x <= (LeviersMesure[i].x + LeviersMesure[i].w) &&
                 this.x + 5 > (LeviersMesure[i].x + LeviersMesure[i].w)
             ){
-                leviers[0].image = levieract;
-                walls[0].image = wall_t;
-                WallsMesure[0].w = 0;
-                WallsMesure[0].h = 0;
+                leviers[i].image = levieract;
+                if(i==0){
+                    walls[0].image = wall_t;
+                    WallsMesure[0].w = 0;
+                    WallsMesure[0].h = 0;
+                }
+                else if(i==1){
+                    platforms[1].image = platform;
+                    PlatformsMesure[1].w = 200;
+                    PlatformsMesure[1].h = 10;
+                }
             }
             else{
                 if(                                                                        
@@ -247,10 +262,17 @@ export class Player{
                     this.y + this.height >= (LeviersMesure[i].y) &&
                     this.y + this.height <= (LeviersMesure[i].y + LeviersMesure[i].h)
                     ){
-                    leviers[0].image = levieract;
-                    walls[0].image = wall_t;
-                    WallsMesure[0].w = 0;
-                    WallsMesure[0].h = 0;
+                    leviers[i].image = levieract;
+                    if(i==0){
+                        walls[0].image = wall_t;
+                        WallsMesure[0].w = 0;
+                        WallsMesure[0].h = 0;
+                    }
+                    else if(i==1){
+                        platforms[1].image = platform;
+                        PlatformsMesure[1].w = 200;
+                        PlatformsMesure[1].h = 10;
+                    }
                 }
                 else if(
                     this.x + this.width >= LeviersMesure[i].x &&
@@ -258,10 +280,17 @@ export class Player{
                     this.y + this.height >= (LeviersMesure[i].y + LeviersMesure[i].h) &&
                     this.y <= (LeviersMesure[i].y + LeviersMesure[i].h)
                 ){
-                    leviers[0].image = levieract;
-                    walls[0].image = wall_t;
-                    WallsMesure[0].w = 0;
-                    WallsMesure[0].h = 0;
+                    leviers[i].image = levieract;
+                    if(i==0){
+                        walls[0].image = wall_t;
+                        WallsMesure[0].w = 0;
+                        WallsMesure[0].h = 0;
+                    }
+                    else if(i==1){
+                        platforms[1].image = platform;
+                        PlatformsMesure[1].w = 200;
+                        PlatformsMesure[1].h = 10;
+                    }
                 }
             }
         }
@@ -364,22 +393,7 @@ export class Player{
                     this.y + this.height >= (ButtonsMesure[i].y) &&
                     this.y + this.height <= (ButtonsMesure[i].y + ButtonsMesure[i].h)
                     ){
-                    
-                    this.y = ButtonsMesure[i].y - this.height;    
-                    this.vy = 0;
-                    this.jumping = false;
-                    
-                    buttons[0].image = buttonact;
-                    platforms[4].image = platform;
-                    PlatformsMesure[4].w = 200;
-                    PlatformsMesure[4].h = 10;
-                    this.btn = 1;
-                }
-                else if(p1.btn != 1 && p2.btn != 1 || p1.btn != 1 && p2.btn != 1){
-                    buttons[0].image = buttondesac;
-                    platforms[4].image = wall_t;
-                    PlatformsMesure[4].w = 0;
-                    PlatformsMesure[4].h = 0;
+                        //on a pas de bouttons ici
                 }
             }
         }

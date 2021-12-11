@@ -1,4 +1,4 @@
-import { AllplatFormes,ctx, WIDTH,HEIGHT,players,panneau} from "../global/glb_var.js";
+import { AllplatFormes,ctx, WIDTH,HEIGHT,players} from "../global/glb_var.js";
 import {scroll1,scroll2,vscroll} from "./scroll.js";
 import {move_hb_plat} from "./move_plat.js";
 import { loop } from "../functions/init.js";
@@ -16,6 +16,7 @@ export function loopAnimation(){
             element.x -= vscroll;
             element.update();
         });
+        
         scroll1();
         move_hb_plat(380,1);
     }

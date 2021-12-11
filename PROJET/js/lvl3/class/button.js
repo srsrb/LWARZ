@@ -1,11 +1,11 @@
-import { AllplatFormes,levierdesac,ctx } from '../global/glb_var.js';
-export class Levier{
+import { AllplatFormes,buttondesac,ctx } from '../global/glb_var.js';
+export class Button{
     constructor(x,y,width,height){
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
-        this.image = levierdesac;
+        this.image = buttondesac;
         AllplatFormes.push(this);
     }
 

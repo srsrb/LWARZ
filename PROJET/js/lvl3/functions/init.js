@@ -30,7 +30,7 @@ function initLeviers(){
 }
 
 function initButton(){
-    for(let i = 0; i < ButtonsMesure.length; i++){
+    for(let i = 0; i <  ButtonsMesure.length; i++){
         buttons.push(new Button(ButtonsMesure[i].x, ButtonsMesure[i].y, ButtonsMesure[i].w,ButtonsMesure[i].h));
     }
 }
@@ -56,9 +56,9 @@ function initPlatforms(){
     for(let i = 0; i <  PlatformsMesure.length; i++){
         platforms.push(new Platform(platform,PlatformsMesure[i].x, PlatformsMesure[i].y, PlatformsMesure[i].w,PlatformsMesure[i].h));
     }
-    platforms[4].image = wall_t;
-    PlatformsMesure[4].w = 0;
-    PlatformsMesure[4].h = 0;
+    platforms[1].image = wall_t;
+    PlatformsMesure[1].w = 0;
+    PlatformsMesure[1].h = 0;
 }
 
 let p1;
@@ -67,6 +67,7 @@ let p2;
 function initPlayers(){
     p1 = new Player(50,400,1);
     p2 = new Player(120,400,2);
+    //on va initier un 2eme joueur le jour ou on en aura besoin
 }
 
 function gameOver(){
