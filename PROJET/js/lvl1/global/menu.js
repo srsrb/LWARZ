@@ -135,7 +135,7 @@ start_btn.addEventListener('click', (e) => {
 })
 
 exit_btn.addEventListener('click', ()=>{
-    window.exit();
+    window.close();
 })
 
 function IsOnPause(state){
