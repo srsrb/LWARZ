@@ -12,11 +12,11 @@ let getLiMenu = document.querySelectorAll('li');
 
 let exit_btn =  document.getElementById('exit');
 
-let hover = new Audio("/music/hover3.mp3");
-let jojo = new Audio("/music/jojo.mp3");
+let hover = new Audio("../music/hover3.mp3");
+let jojo = new Audio("../music/jojo.mp3");
 hover.volume = 0.09;
-let loseSound = new Audio("/music/lose.mp3");
-let pauseSound = new Audio("/music/pause.mp3");
+let loseSound = new Audio("../music/lose.mp3");
+let pauseSound = new Audio("../music/pause.mp3");
 let winSound = new Audio("../music/win.mp3");
 winSound.volume = 0.09;
 
