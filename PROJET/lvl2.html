@@ -4,19 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icone.png">
     <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" href="style/menu.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    
     <title>LWARZ</title>
 </head>
 <body>
-    <style>
-        html{
-            overflow: hidden;
-        }
-    </style>
-        <div>
+    <div style="width:100%; display:flex; justify-content: center;">
         <div class="loader">
             <span class="lettre">C</span>
             <span class="lettre">H</span>
@@ -28,11 +26,82 @@
             <span class="lettre">E</span>
             <span class="lettre">N</span>
             <span class="lettre">T</span>	
+        </div> 
+        <div>
+            <!-- <h1>LWARZ</h1> -->
+            <canvas id="canvas" height="650" width="1200"></canvas>
         </div>
-        <h1>LWARZ</h1>
-        <canvas id="canvas" height="550" width="1200">JOUER</canvas>
     </div>
+
+    <div id="menu_start">
+        <nav id="navbar1">
+            <ul>
+                <li><a id="start" class="btn" href=""></a></li>
+                <li><a id="level"class="btn" href=""></a></li>
+                <li><a id="settings"class="btn" href=""></a></li>
+                <li><a id="exit"class="btn" href=""></a></li>
+            </ul>
+        </nav>
+    </div>
+
+        
+    <div id="navbar2">
+        <p id="retry"></p>
+        <div id="buttons_gameOver">
+            <p><a href="" id="repeat_btn"><img src="img/menu/Repeat.png" alt=""></a></p>
+            
+            <p><a href="" class="settings_btn"><img src="img/menu/settings_button.png" alt=""></a></p>
+        </div>
+    </div>
+
+    <div id="pauseBlock">
+        <p id="pause"></p>
+        <div id="buttons_pause">
+            <p><a href="" class="repeatBtn"><img src="img/menu/Repeat.png" alt=""></a></p>
+            <p><a href="" id="play_pause_btn"><img src="img/menu/play.png" alt=""></a></p>
+            <p><a href="" class="settings_btn"><img src="img/menu/settings_button.png" alt=""></a></p>
+        </div>
+    </div>
+
+
+
+    <div id="victoryBlock">
+        <p id="win"></p>
+        <div id="buttons_win">
+            <p><a href="" class="repeatBtn"><img src="img/menu/Repeat.png" alt=""></a></p>
+            <p><a href="lvl3.html" id="nextLevel"><img src="img/menu/play.png" alt=""></a></p>
+            <p><a href="" class="settings_btn"><img src="img/menu/settings_button.png" alt=""></a></p>
+        </div>
+    </div>
+
+
+
+    <div id="overlay"></div>
+    
+    <main id="header1">
+        <div id="module">
+            <div><a href="lvl1.html"><img src="img/menu/level_1.png" alt=""></a></div>
+            <div><a href="lvl2.html"><img src="img/menu/level_2.png" alt=""></a></div>
+            <div><a href="lvl3.html"><img src="img/menu/level_3.png" alt=""></a></div>
+            <div><a href="lvl4.html"><img src="img/menu/level_4.png" alt=""></a></div>
+            <div><a href="lvl5.html"><img src="img/menu/level_5.png" alt=""></a></div>
+        </div>
+
+    </main>
+
+    <main id="header2">
+        <div id="module2">
+            <nav>
+                <ul>
+                    <li > <img id="OFF" src="img/menu/testOff.png" alt=""></li>
+                    <li><img  id="ON" src="img/menu/test.png" alt=""></li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+    
     <script type="module" src="js/app.js"></script>
     <script type="module" src="js/lvl2/main.js"></script> 
+    <script type="module" src="js/lvl2/global/menu.js"></script>
 </body>
 </html>

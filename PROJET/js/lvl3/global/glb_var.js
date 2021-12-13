@@ -62,9 +62,13 @@ let doorclose = new Image();
 doorclose.src = "img/door.png";
 let dooropen = new Image();
 dooropen.src = "img/dooropen.png";
+let panneau = new Image();
+panneau.src = "img/panneau.png";
 
 export{canvas, ctx, HEIGHT, WIDTH,skys,sky,perso1,perso2,
     players,AllplatFormes,grounds,platforms,
     walls,buttons,gameOverImg,
-    obstacles,gravite,friction,platform,wall,ground,wall_t,buttonact,buttondesac,vpmove,cmpt,leviers,doorclose,doors,walls_t,dooropen,levieract,levierdesac
+    obstacles,gravite,friction,platform,wall,ground,wall_t,
+    buttonact,buttondesac,vpmove,cmpt,leviers,doorclose,doors,
+    walls_t,dooropen,levieract,levierdesac,panneau
 };

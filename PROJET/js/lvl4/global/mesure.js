@@ -2,39 +2,39 @@ import {HEIGHT,WIDTH} from './glb_var.js';
 
 let GroundsMesure = [{ 
     x: 0,
-    y: 500,
+    y: 600,
     w: 500,
-    h: HEIGHT - 500,
+    h: 50,
 },
 {
     x: 500,
-    y: 500,
+    y: 600,
     w: 500,
-    h: HEIGHT - 500,
+    h: 50,
 },
 {
     x: 1000,
-    y: 500,
+    y: 600,
     w: 500,
-    h: HEIGHT - 500,
+    h: 50,
 },
 {
     x: 2300,
-    y: 280,
+    y: 330,
     w: 500,
-    h: HEIGHT - 500,
+    h: 50,
 }
 ];
 
 let LeviersMesure = [{
     x: 750,
-    y: 450,
+    y: 550,
     w: 50,
     h: 50,
 },
 {
     x: 1675,
-    y: 330,
+    y: 430,
     w: 50,
     h: 50,
 }
@@ -42,7 +42,7 @@ let LeviersMesure = [{
 
 let WallsMesure = [{
     x: 500,
-    y: 250,
+    y: 350,
     w: 100,
     h: 250,
 }
@@ -77,7 +77,7 @@ let WallsInvisibleMesure = [
 
 let DoorMesure=[{
     x:2650,
-    y:180,
+    y:230,
     w:50,
     h:100
 }];
@@ -86,13 +86,13 @@ let DoorMesure=[{
 let PlatformsMesure = [
 {
     x: 1600,
-    y: 380,
+    y: 480,
     w: 200,
     h: 10,
 },
 {
     x: 1950,                //elle monte et descends celle ci
-    y: 380,
+    y: 480,
     w: 200,
     h: 10,              
 }

@@ -1,5 +1,5 @@
 import {Fond} from '../class/fond.js';
-import {buttons, platforms,skys,WIDTH,HEIGHT,walls,grounds,ctx,gameOverImg,wall,ground,leviers,platform,doors,wall_t,walls_t} from '../global/glb_var.js';
+import {buttons, platforms,skys,WIDTH,HEIGHT,walls,grounds,ctx,wall,ground,platform,canvas,walls_t,wall_t,leviers,doors} from '../global/glb_var.js';
 
 import {Button} from '../class/button.js';
 
@@ -7,20 +7,28 @@ import {Player} from '../class/player.js';
 
 import {Wall} from '../class/wall.js';
 
-import { Door } from '../class/door.js';
+import {Door} from '../class/door.js';
 
-import {PlatformsMesure,WallsMesure,GroundsMesure, ButtonsMesure, LeviersMesure,DoorMesure,WallsInvisibleMesure} from '../global/mesure.js';
+
+import {PlatformsMesure,WallsMesure,GroundsMesure, ButtonsMesure, LeviersMesure,WallsInvisibleMesure,DoorMesure} from '../global/mesure.js';
 import {Platform} from '../class/platform.js';
 import { Levier } from '../class/levier.js';
+import { jojo,loseSound,winSound} from '../global/menu.js';
+import {Panel} from '../class/panel.js'
 
-let loop = true;
+
 let gmover = false;
+let win = false;
 
 function initSky(){
     skys.push(new Fond(0-WIDTH));
     for(let i = 0; i < 4; i++){
         skys.push(new Fond(WIDTH * i));
     }
+}
+
+function initPanel(){
+    new Panel(300,540);
 }
 
 function initLeviers(){
@@ -47,10 +55,6 @@ function initWalls(){
     }
 }
 
-function initDoor(){
-    doors.push(new Door(DoorMesure[0].x,DoorMesure[0].y,DoorMesure[0].w,DoorMesure[0].h));
-}
-
 function initPlatforms(){
     //on parcourt le tableau PlatformsMesure pour creer tous les murs et les mettre dans le tableau platforms
     for(let i = 0; i <  PlatformsMesure.length; i++){
@@ -61,31 +65,36 @@ function initPlatforms(){
     PlatformsMesure[1].h = 0;
 }
 
+function initDoor(){
+    doors.push(new Door(DoorMesure[0].x,DoorMesure[0].y,DoorMesure[0].w,DoorMesure[0].h));
+}
+
 let p1;
 let p2;
 
 function initPlayers(){
     p1 = new Player(50,400,1);
     p2 = new Player(120,400,2);
-    //on va initier un 2eme joueur le jour ou on en aura besoin
 }
 
 function gameOver(){
-    ctx.drawImage(gameOverImg, WIDTH/2 - 100, HEIGHT/2 - 100,200,200);
-    loop = false;
     gmover = true;
+    jojo.pause();
+    jojo.currentTime = 0;
+    loseSound.play();
+    loseSound.volume = 0.2;
 }
 
-function unpause(){
-    loop = true;
-}
-
-function pause(){
-    loop = false;
+function victory(){
+    win = true;
+    jojo.pause();
+    jojo.currentTime = 0;
+    winSound.play();
+    winSound.volume = 0.2;
 }
 
 function drawSprite(img,sX,sY,sW,sH,dX,dY,dW,dH){
     ctx.drawImage(img,sX,sY,sW,sH,dX,dY,dW,dH);
 }
 
-export{initSky,initButton,gameOver,initPlayers,initPlatforms,initWalls,initLeviers,initDoor,p1,p2,drawSprite,loop,gmover,unpause,pause};
+export{initSky,initButton,gameOver,initPlayers,initPlatforms,initWalls,initLeviers,p1,p2,drawSprite,gmover,initDoor,initPanel,victory,win};

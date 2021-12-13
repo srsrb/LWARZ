@@ -7,9 +7,11 @@ import {PlatformsMesure,WallsMesure,GroundsMesure, ButtonsMesure, LeviersMesure,
 
 import {RIGHT,LEFT,UP,RIGHT2,LEFT2,UP2} from '../functions/controller.js';
 
-import{gameOver,p1,p2,drawSprite} from '../functions/init.js';
+import{gameOver,p1,p2,drawSprite,victory} from '../functions/init.js';
 
 let cmptend = 0;
+let jump = new Audio('../music/jump.wav');
+jump.volume = 0.1;
 
 export class Player{
     constructor(x, y, whichplayer){
@@ -47,6 +49,7 @@ export class Player{
             if(UP && this.jumping == false){
                 this.vy -= this.jump;
                 this.jumping = true;
+                jump.play();
             }
 
             if(LEFT){
@@ -90,6 +93,7 @@ export class Player{
             if(UP2 && this.jumping == false){
                 this.vy -= this.jump;
                 this.jumping = true;
+                jump.play();
             }
 
             if(LEFT2){
@@ -165,8 +169,7 @@ export class Player{
             this.x = WallsInvisibleMesure[0].x + WallsInvisibleMesure[0].w + 5;
             this.y = WallsInvisibleMesure[2].y - this.height;
             if(cmptend==2){
-                //win();
-                gameOver();
+                victory();
             }
         }
     }
@@ -224,10 +227,18 @@ export class Player{
                 this.x + this.width >= (LeviersMesure[i].x) &&
                 this.x + this.width - 5 < (LeviersMesure[i].x)
                 ){
-                leviers[0].image = levieract;
-                walls[0].image = wall_t;
-                WallsMesure[0].w = 0;
-                WallsMesure[0].h = 0;
+    
+                leviers[i].image = levieract;
+                if(i==0){
+                    walls[0].image = wall_t;
+                    WallsMesure[0].w = 0;
+                    WallsMesure[0].h = 0;
+                }
+                else if(i==1){
+                    platforms[0].image = platform;
+                    PlatformsMesure[0].w = 100;
+                    PlatformsMesure[0].h = 10;
+                }
             }
             else if(
                 this.y + this.height - 1 > (LeviersMesure[i].y) &&
@@ -235,10 +246,17 @@ export class Player{
                 this.x <= (LeviersMesure[i].x + LeviersMesure[i].w) &&
                 this.x + 5 > (LeviersMesure[i].x + LeviersMesure[i].w)
             ){
-                leviers[0].image = levieract;
-                walls[0].image = wall_t;
-                WallsMesure[0].w = 0;
-                WallsMesure[0].h = 0;
+                leviers[i].image = levieract;
+                if(i==0){
+                    walls[0].image = wall_t;
+                    WallsMesure[0].w = 0;
+                    WallsMesure[0].h = 0;
+                }
+                else if(i==1){
+                    platforms[0].image = platform;
+                    PlatformsMesure[0].w = 100;
+                    PlatformsMesure[0].h = 10;
+                }
             }
             else{
                 if(                                                                        
@@ -247,10 +265,17 @@ export class Player{
                     this.y + this.height >= (LeviersMesure[i].y) &&
                     this.y + this.height <= (LeviersMesure[i].y + LeviersMesure[i].h)
                     ){
-                    leviers[0].image = levieract;
-                    walls[0].image = wall_t;
-                    WallsMesure[0].w = 0;
-                    WallsMesure[0].h = 0;
+                    leviers[i].image = levieract;
+                    if(i==0){
+                        walls[0].image = wall_t;
+                        WallsMesure[0].w = 0;
+                        WallsMesure[0].h = 0;
+                    }
+                    else if(i==1){
+                        platforms[0].image = platform;
+                        PlatformsMesure[0].w = 100;
+                        PlatformsMesure[0].h = 10;
+                    }
                 }
                 else if(
                     this.x + this.width >= LeviersMesure[i].x &&
@@ -258,10 +283,17 @@ export class Player{
                     this.y + this.height >= (LeviersMesure[i].y + LeviersMesure[i].h) &&
                     this.y <= (LeviersMesure[i].y + LeviersMesure[i].h)
                 ){
-                    leviers[0].image = levieract;
-                    walls[0].image = wall_t;
-                    WallsMesure[0].w = 0;
-                    WallsMesure[0].h = 0;
+                    leviers[i].image = levieract;
+                    if(i==0){
+                        walls[0].image = wall_t;
+                        WallsMesure[0].w = 0;
+                        WallsMesure[0].h = 0;
+                    }
+                    else if(i==1){
+                        platforms[0].image = platform;
+                        PlatformsMesure[0].w = 100;
+                        PlatformsMesure[0].h = 10;
+                    }
                 }
             }
         }
@@ -365,21 +397,21 @@ export class Player{
                     this.y + this.height <= (ButtonsMesure[i].y + ButtonsMesure[i].h)
                     ){
                     
-                    this.y = ButtonsMesure[i].y - this.height;    
+                        this.y = ButtonsMesure[i].y - this.height;    
                     this.vy = 0;
                     this.jumping = false;
                     
                     buttons[0].image = buttonact;
-                    platforms[4].image = platform;
-                    PlatformsMesure[4].w = 200;
-                    PlatformsMesure[4].h = 10;
+                    platforms[2].image = platform;
+                    PlatformsMesure[2].w = 200;
+                    PlatformsMesure[2].h = 10;
                     this.btn = 1;
                 }
                 else if(p1.btn != 1 && p2.btn != 1 || p1.btn != 1 && p2.btn != 1){
                     buttons[0].image = buttondesac;
-                    platforms[4].image = wall_t;
-                    PlatformsMesure[4].w = 0;
-                    PlatformsMesure[4].h = 0;
+                    platforms[2].image = wall_t;
+                    PlatformsMesure[2].w = 0;
+                    PlatformsMesure[2].h = 0;
                 }
             }
         }

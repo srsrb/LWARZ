@@ -1,26 +1,34 @@
-import{loopAnimation} from '../functions/loopAnimation.js';
-import{gmover,loop, unpause,pause} from '../functions/init.js'
+import {IsOnPause,pause,pauseM, pauseSound, jojo,startClicked} from '../global/menu.js';
 
 let RIGHT,LEFT,UP,RIGHT2,LEFT2,UP2;
 
+
 function Controller(){
-    window.addEventListener('keydown',function(e){
-        if(e.keyCode == 39) RIGHT = true;
-        if(e.keyCode == 37) LEFT = true;
-        if(e.keyCode == 38) UP = true;
-        if(e.keyCode == 68) RIGHT2 = true;
-        if(e.keyCode == 81) LEFT2 = true;
-        if(e.keyCode == 90) UP2 = true;
-    });
-    window.addEventListener('keyup',function(e){
-        if(e.keyCode == 39) RIGHT = false;
-        if(e.keyCode == 37) LEFT = false;
-        if(e.keyCode == 38) UP = false;  
-        if(e.keyCode == 68) RIGHT2 = false;
-        if(e.keyCode == 81) LEFT2 = false;
-        if(e.keyCode == 90) UP2 = false;
-    });
+    if(!pause && startClicked){
+        window.addEventListener('keydown',function(e){
+            if(e.keyCode == 39) RIGHT = true;
+            if(e.keyCode == 37) LEFT = true;
+            if(e.keyCode == 38) UP = true;
+            if(e.keyCode == 68) RIGHT2 = true;
+            if(e.keyCode == 81) LEFT2 = true;
+            if(e.keyCode == 90) UP2 = true;
+        });
+        window.addEventListener('keyup',function(e){
+            if(e.keyCode == 39) RIGHT = false;
+            if(e.keyCode == 37) LEFT = false;
+            if(e.keyCode == 38) UP = false;  
+            if(e.keyCode == 68) RIGHT2 = false;
+            if(e.keyCode == 81) LEFT2 = false;
+            if(e.keyCode == 90) UP2 = false;
+        });
+        window.addEventListener('keydown', function(e){
+            if(e.keyCode == 80 && pause == false){
+                console.log("efv")
+                IsOnPause(true);pauseSound.play(); pauseSound.volume = 0.2;jojo.pause();}                                                            // Si P est préssé, jeu en pause.
+        });
+    }
 }
+
 
 function updateGamepad(){
     requestAnimationFrame(updateGamepad);
@@ -53,9 +61,4 @@ function updateGamepad(){
 }
 
 
-window.addEventListener('keydown', function(e){
-    if(e.keyCode == 80 && loop == true){pause();}                                                            // Si P est préssé, jeu en pause.
-    else if(e.keyCode == 80 && loop == false && gmover == false){unpause();loopAnimation();};   // Si R est préssé et que le jeu est en pause mais seulement parce qu'on a appuyé sur P, alors le jeu reprend.
-});
-
-export{Controller,updateGamepad, RIGHT,LEFT,UP,RIGHT2,LEFT2,UP2,loop};
+export{Controller,updateGamepad, RIGHT,LEFT,UP,RIGHT2,LEFT2,UP2};

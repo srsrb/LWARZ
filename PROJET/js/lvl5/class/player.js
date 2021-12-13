@@ -7,9 +7,11 @@ import {PlatformsMesure,WallsMesure,GroundsMesure, ButtonsMesure, LeviersMesure,
 
 import {RIGHT,LEFT,UP,RIGHT2,LEFT2,UP2} from '../functions/controller.js';
 
-import{gameOver,p1,p2,drawSprite} from '../functions/init.js';
+import{gameOver,p1,p2,drawSprite,victory} from '../functions/init.js';
 
 let cmptend = 0;
+let jump = new Audio('../music/jump.wav');
+jump.volume = 0.1;
 
 export class Player{
     constructor(x, y, whichplayer){
@@ -47,6 +49,7 @@ export class Player{
             if(UP && this.jumping == false){
                 this.vy -= this.jump;
                 this.jumping = true;
+                jump.play();
             }
 
             if(LEFT){
@@ -90,6 +93,7 @@ export class Player{
             if(UP2 && this.jumping == false){
                 this.vy -= this.jump;
                 this.jumping = true;
+                jump.play();
             }
 
             if(LEFT2){
@@ -129,7 +133,6 @@ export class Player{
         this.WallsCollision();
         this.GroundsCollision();
         this.LeviersCollision();
-        this.ButtonsCollision();
         this.PlatformsCollision();
         this.PlayersCollision();
         this.WallsInvisibleCollision();
@@ -165,8 +168,7 @@ export class Player{
             this.x = WallsInvisibleMesure[0].x + WallsInvisibleMesure[0].w + 5;
             this.y = WallsInvisibleMesure[2].y - this.height;
             if(cmptend==2){
-                //win();
-                gameOver();
+                victory();
             }
         }
     }
