@@ -60,9 +60,9 @@ function initPlatforms(){
     for(let i = 0; i <  PlatformsMesure.length; i++){
         platforms.push(new Platform(platform,PlatformsMesure[i].x, PlatformsMesure[i].y, PlatformsMesure[i].w,PlatformsMesure[i].h));
     }
-    platforms[1].image = wall_t;
-    PlatformsMesure[1].w = 0;
-    PlatformsMesure[1].h = 0;
+    platforms[4].image = wall_t;
+    PlatformsMesure[4].w = 0;
+    PlatformsMesure[4].h = 0;
 }
 
 function initDoor(){

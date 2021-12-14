@@ -20,7 +20,9 @@ export function loopAnimation(){
             element.update();
         });
         scroll1();
-        move_hb_plat(380,1);
+        move_hb_plat(500,0,1);
+        move_hb_plat(480,2,1);
+        move_hb_plat(350,3,0.4);
     }
 
     if(gmover){

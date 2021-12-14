@@ -1,9 +1,10 @@
 import {AllplatFormes,ctx} from '../global/glb_var.js';
 
 export class Platform{
-    constructor(image,x,y,width,height){
+    constructor(image,x,y,width,height,vpmove){
         this.x = x;
         this.y = y;
+        this.v = vpmove ;
         this.width = width;
         this.height = height;
         this.image = image;

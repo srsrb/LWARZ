@@ -9,7 +9,7 @@ const WIDTH = canvas.width;
 
 const gravite = 1;
 const friction = 0.9;
-const vpmove = 1;             // Variable Platform Move = VPMOVE
+            // Variable Platform Move = VPMOVE
 let cmpt = [                    // tableau d'objets de compteur.
     {
         platmove1:0,
@@ -69,6 +69,6 @@ export{canvas, ctx, HEIGHT, WIDTH,skys,sky,perso1,perso2,
     players,AllplatFormes,grounds,platforms,
     walls,buttons,gameOverImg,
     obstacles,gravite,friction,platform,wall,ground,wall_t,
-    buttonact,buttondesac,vpmove,cmpt,leviers,doorclose,doors,
+    buttonact,buttondesac,cmpt,leviers,doorclose,doors,
     walls_t,dooropen,levieract,levierdesac,panneau
 };

@@ -10,7 +10,7 @@ import {RIGHT,LEFT,UP,RIGHT2,LEFT2,UP2} from '../functions/controller.js';
 import{gameOver,p1,p2,drawSprite,victory} from '../functions/init.js';
 
 let cmptend = 0;
-let jump = new Audio('../../PROJET/music/jump.wav');
+let jump = new Audio('../music/jump.wav');
 jump.volume = 0.1;
 
 export class Player{
@@ -228,17 +228,12 @@ export class Player{
                 ){
     
                 leviers[i].image = levieract;
-                if(i==0){
-                    walls[0].image = wall_t;
-                    WallsMesure[0].w = 0;
-                    WallsMesure[0].h = 0;
-                }
-                else if(i==1){
-                    platforms[1].image = platform;
-                    PlatformsMesure[1].w = 200;
-                    PlatformsMesure[1].h = 10;
-                }
+                
+                platforms[4].image = platform;
+                PlatformsMesure[4].w = 150;
+                PlatformsMesure[4].h = 10;
             }
+        
             else if(
                 this.y + this.height - 1 > (LeviersMesure[i].y) &&
                 this.y <= (LeviersMesure[i].y + LeviersMesure[i].h) &&
@@ -246,16 +241,10 @@ export class Player{
                 this.x + 5 > (LeviersMesure[i].x + LeviersMesure[i].w)
             ){
                 leviers[i].image = levieract;
-                if(i==0){
-                    walls[0].image = wall_t;
-                    WallsMesure[0].w = 0;
-                    WallsMesure[0].h = 0;
-                }
-                else if(i==1){
-                    platforms[1].image = platform;
-                    PlatformsMesure[1].w = 200;
-                    PlatformsMesure[1].h = 10;
-                }
+                
+                platforms[4].image = platform;
+                PlatformsMesure[4].w = 150;
+                PlatformsMesure[4].h = 10;
             }
             else{
                 if(                                                                        
@@ -265,16 +254,10 @@ export class Player{
                     this.y + this.height <= (LeviersMesure[i].y + LeviersMesure[i].h)
                     ){
                     leviers[i].image = levieract;
-                    if(i==0){
-                        walls[0].image = wall_t;
-                        WallsMesure[0].w = 0;
-                        WallsMesure[0].h = 0;
-                    }
-                    else if(i==1){
-                        platforms[1].image = platform;
-                        PlatformsMesure[1].w = 200;
-                        PlatformsMesure[1].h = 10;
-                    }
+                    
+                    platforms[4].image = platform;
+                    PlatformsMesure[4].w = 150;
+                    PlatformsMesure[4].h = 10;
                 }
                 else if(
                     this.x + this.width >= LeviersMesure[i].x &&
@@ -283,16 +266,10 @@ export class Player{
                     this.y <= (LeviersMesure[i].y + LeviersMesure[i].h)
                 ){
                     leviers[i].image = levieract;
-                    if(i==0){
-                        walls[0].image = wall_t;
-                        WallsMesure[0].w = 0;
-                        WallsMesure[0].h = 0;
-                    }
-                    else if(i==1){
-                        platforms[1].image = platform;
-                        PlatformsMesure[1].w = 200;
-                        PlatformsMesure[1].h = 10;
-                    }
+                    
+                    platforms[4].image = platform;
+                    PlatformsMesure[4].w = 150;
+                    PlatformsMesure[4].h = 10;
                 }
             }
         }

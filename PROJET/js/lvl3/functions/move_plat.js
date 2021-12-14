@@ -1,7 +1,7 @@
-import{vpmove,cmpt, platforms} from '../global/glb_var.js';
+import{cmpt, platforms} from '../global/glb_var.js';
 import {PlatformsMesure} from '../global/mesure.js';
 
-function move_hb_plat(vali,i){ //vali = vleur de la plateforme i.
+function move_hb_plat(vali,i,vpmove){ //vali = vleur de la plateforme i.
     if(PlatformsMesure[i].y >= vali - 100 && cmpt[0].platmove1 == 0){
         PlatformsMesure[i].y -= vpmove;
         platforms[i].y-=vpmove;

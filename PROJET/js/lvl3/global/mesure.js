@@ -6,45 +6,42 @@ let GroundsMesure = [{
     w: 500,
     h: 50,
 },
-{
-    x: 500,
+{ 
+    x: 700,
     y: 600,
-    w: 500,
+    w: 200,
+    h: 50,
+},
+{ 
+    x: 1800,
+    y: 150,
+    w: 200,
     h: 50,
 },
 {
-    x: 1000,
-    y: 600,
-    w: 500,
-    h: 50,
-},
-{
-    x: 2300,
-    y: 330,
-    w: 500,
-    h: 50,
+    x:2500,
+    y:300,
+    w:200,
+    h:40
 }
+
+
 ];
 
 let LeviersMesure = [{
-    x: 750,
-    y: 550,
+    x: 1850,
+    y: 100,
     w: 50,
     h: 50,
 },
-{
-    x: 1675,
-    y: 430,
-    w: 50,
-    h: 50,
-}
+
 ];
 
 let WallsMesure = [{
-    x: 500,
-    y: 350,
-    w: 100,
-    h: 250,
+    x: 0,
+    y: 0,
+    w: 0,
+    h: 0,
 }
 ] ;
 
@@ -77,7 +74,7 @@ let WallsInvisibleMesure = [
 
 let DoorMesure=[{
     x:2650,
-    y:230,
+    y:200,
     w:50,
     h:100
 }];
@@ -85,16 +82,34 @@ let DoorMesure=[{
 // On definie un tableau qui contiendra des objets qui correspondent aux mesures de chaque mur
 let PlatformsMesure = [
 {
-    x: 1600,
-    y: 480,
-    w: 200,
-    h: 10,
+    x: 1000,
+    y: 500,
+    w: 150,
+    h: 10, 
 },
 {
-    x: 1950,                //elle monte et descends celle ci
-    y: 480,
+    x: 1350,                
+    y: 500,
     w: 200,
     h: 10,              
+},
+{
+    x: 1650,                
+    y: 480,
+    w: 200,
+    h: 10, 
+},
+{
+    x: 1900,                
+    y: 350,
+    w: 200,
+    h: 10, 
+},
+{
+    x: 2200,                
+    y: 300,
+    w: 150,
+    h: 10, 
 }
 ];
 
