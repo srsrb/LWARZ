@@ -10,7 +10,7 @@ import {RIGHT,LEFT,UP,RIGHT2,LEFT2,UP2} from '../functions/controller.js';
 import{gameOver,p1,p2,drawSprite,victory} from '../functions/init.js';
 
 let cmptend = 0;
-let jump = new Audio('../music/jump.wav');
+let jump = new Audio('../PROJET/music/jump.wav');
 jump.volume = 0.1;
 
 export class Player{
